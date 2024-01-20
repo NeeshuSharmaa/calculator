@@ -36,7 +36,6 @@ numBtns.forEach((btn) => {
       activeElement = "num1";
       num1 = num1 + num;
       currOperandText.innerText = num1;
-      prevOperandText.innerText = num1;
     } else {
       activeElement = "num2";
       num2 = num2 + num;
@@ -111,10 +110,12 @@ deleteBtn.addEventListener("click", () => {
   } else if (activeElement === "num2") {
     num2 = num2.slice(0, num2.length - 1);
     currOperandText.innerText = num2;
-    prevOperandText.innerText = num2;
+    prevOperandText.innerText = `${num1} ${activeOperation}`;
 
     if (num2.length === 0) {
       activeElement = "operation";
+      num2 = 0;
+      currOperandText.innerText = num2;
     }
   } else if (activeElement === "operation") {
     activeOperation = undefined;
