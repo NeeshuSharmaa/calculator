@@ -107,9 +107,11 @@ deleteBtn.addEventListener("click", () => {
   if (activeElement === "num1") {
     num1 = num1.slice(0, num1.length - 1);
     currOperandText.innerText = num1;
+    prevOperandText.innerText = num1;
   } else if (activeElement === "num2") {
     num2 = num2.slice(0, num2.length - 1);
     currOperandText.innerText = num2;
+    prevOperandText.innerText = num2;
 
     if (num2.length === 0) {
       activeElement = "operation";
